@@ -7,17 +7,17 @@ from rest_framework.decorators import authentication_classes,permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
 from rest_framework import serializers
-from django.contrib.auth.models import User
+from user.models import Student
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User
-        fields = ('id', 'username', 'email', 'password')
+        model = Student
+        fields = ('id', 'username', 'email', 'password', 'curp')
 
 
 @api_view(['POST'])
 def login(request):
-    user = get_object_or_404(User, username=request.data.get('username'))
+    user = get_object_or_404(Student, username=request.data.get('username'))
 
     if not user.check_password(request.data.get('password')):
         return Response({"error": "invalid password"}, status=status.HTTP_400_BAD_REQUEST)
@@ -34,7 +34,7 @@ def register(request):
     if serializer.is_valid():
         serializer.save()
 
-        user = User.objects.get(username=serializer.data['username'])
+        user = Student.objects.get(username=serializer.data['username'])
         user.set_password(serializer.data['password'])
         user.save()
 

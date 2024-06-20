@@ -5,5 +5,6 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('module.urls')),
-    path('user/', include('user.urls'))
+    path('user/', include('user.urls')),
+    path('comments/', include('comments.urls')),
 ]
