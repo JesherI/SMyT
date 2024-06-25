@@ -3,7 +3,7 @@ from .api import CommentsViewSet
 
 router = routers.DefaultRouter()
 
-router.register(r'commentarios', CommentsViewSet, 'comments')
+router.register(r'comments', CommentsViewSet, 'comments')
 
 
 urlpatterns = router.urls

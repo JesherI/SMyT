@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'module',
     'user',
     'comments',
+    'exam',
     'rest_framework',
     'rest_framework.authtoken',
 ]

@@ -7,4 +7,5 @@ urlpatterns = [
     path('api/', include('module.urls')),
     path('user/', include('user.urls')),
     path('comments/', include('comments.urls')),
+    path('exam/',include('exam.urls')),
 ]
