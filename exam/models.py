@@ -3,8 +3,7 @@ from django.contrib.auth.models import User
 from module.models import Licence, Module
 
 class Exam(models.Model):
-    id = models.AutoField(primary_key=True)
-    id_user = models.ForeignKey(User, on_delete=models.CASCADE)
+    User = models.ForeignKey(User, on_delete=models.CASCADE)
     type_license = models.ForeignKey(Licence, on_delete=models.CASCADE)
     def __str__(self):
         return self.name
