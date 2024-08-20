@@ -11,4 +11,3 @@ class LicenceViewSet(viewsets.ModelViewSet):
     queryset = Licence.objects.all()
     permission_classes = [permissions.AllowAny]
     serializer_class = LicenceSerializer
-

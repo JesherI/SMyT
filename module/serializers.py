@@ -10,6 +10,6 @@ class ModuleSerializer(serializers.ModelSerializer):
 class LicenceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Licence
-        fields = ('id', 'name', 'description')
+        fields = ('id', 'name', 'letter', 'description')
         read_only_fields = ['id']
 
