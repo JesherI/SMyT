@@ -8,4 +8,5 @@ urlpatterns = [
     path('user/', include('user.urls')),
     path('comments/', include('comments.urls')),
     path('exam/',include('exam.urls')),
+    path('cource/',include('cource.urls')),
 ]
